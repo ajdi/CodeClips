@@ -1,0 +1,205 @@
+<html>
+	<head>
+		<title></title>
+		<style>
+		* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #ccc;
+}
+.group {
+  &:after {
+    display: block;
+    clear: both;
+  }
+}
+.page-wrap {
+  width: 80%;
+  background: white;
+  margin: 1rem auto;
+  padding: 2rem;
+  @include transition(0.4s);
+}
+.main-header {
+  position: relative;
+}
+.logo {
+  width: 25%;
+  background: #F06D06;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-size: 3rem;
+  float: left;
+  height: 80px;
+  @include transition(0.4s);
+}
+.search {
+  width: 25%;
+  position: absolute;
+  left: 25%;
+  top: 0;
+  background: lightblue;
+  height: 80px;
+  padding: 1rem;
+  @include transition(0.8s);
+  label {
+    display: block;
+  }
+}
+.nav {
+  width: 50%;
+  float: right;
+  background: lightgreen;
+  height: 80px;
+  padding: 1rem;
+  @include transition(0.4s);
+}
+.main-content {
+  overflow: hidden;
+  clear: both;
+  @include transition(0.4s);
+}
+.main-content--articles {
+  width: 75%;
+  float: left;
+  background: #eee;
+  padding: 1rem;
+  @include transition(0.4s);
+  article {
+    background: white;
+    padding: 1rem;
+    margin: 0 0 1rem 0;
+    &:last-child {
+      margin: 0;
+    }
+  }
+}
+.main-content--sidebar {
+  width: 25%;
+  float: right;
+  background: #ddd;
+  padding: 1rem;
+}
+.module {
+  background: white;
+  padding: 1rem;
+  @include transition(0.4s);
+}
+
+@media (max-width: 850px) {
+  .page-wrap {
+    width: 98%;
+  }
+}
+@media (max-width: 700px) {
+  .search {
+    left: 66.66%;
+    top: 80px;
+    width: 33.33%;
+  }
+  .logo {
+    width: 33.33%;
+  }
+  .nav {
+    width: 66.66%;
+  }
+  .main-content--articles {
+    width: 66.66%;
+  } 
+  .main-content--sidebar {
+    width: 33.33%;
+    padding-top: 80px
+  }
+  .module {
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 550px) {
+  .page-wrap {
+    padding: 1rem;
+  }
+  .logo {
+    width: 100%;
+  }
+  .nav {
+    width: 100%;
+    height: 50px;
+  }
+  .search {
+    left: 0;
+    width: 100%;
+    top: 130px;
+    height: 70px;
+  }
+  .main-content {
+    padding-top: 70px;
+  }
+  .main-content--articles {
+    width: 100%;
+  }
+  .main-content--sidebar {
+    padding-top: 0;
+    width: 100%;
+  }
+}
+
+.note {
+  text-align: center;
+  padding: 0.5rem;
+  font: bold 1.2rem sans-serif;
+}
+		</style>
+	</head>
+	<body>
+		<div class="note">
+		  Animated Media Queries : Resize Width to See
+		</div>
+		
+		<div class="page-wrap">
+		  
+		  <header class="main-header group">
+		    <div class="logo">
+		      Logo!
+		    </div>
+		    <div class="search">
+		      <label for="search">Search</label>      <input type="search">
+		    </div>
+		    <nav class="nav">
+		      stuff
+		    </nav>
+		  </header>
+		  
+		  <div class="main-content">
+		    
+		    <main class="main-content--articles">
+		      
+		      <article>
+		        <h2>Cow Farted</h2>
+		        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>  
+		      </article>
+		      
+		      <article>
+		        <h2>Cow Farted Again</h2>
+		        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>  
+		      </article>
+		      
+		    </main>
+		      
+		    <aside class="main-content--sidebar">
+		      
+		      <div class="module">
+		        <h3>Acillary Stuff</h2>
+		        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti ut recusandae sint explicabo delectus asperiores.</p>
+		      </div>
+		      
+		    </aside>
+		    
+		  </div>
+		  
+		</div>
+	</body>
+</html>

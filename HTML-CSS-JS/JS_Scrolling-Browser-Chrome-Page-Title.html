@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 TRANSITIONAL//EN">
+<html>
+	<head>
+		<title>This is a story of a girl, who cried a river and drowned the whole world.</title>
+		<SCRIPT language=JavaScript>
+			var repeat=1;
+			var title=document.title+' - ';
+			var leng=title.length;
+			var start=1;
+			function titlemove() {
+				titl=title.substring(start, leng) + title.substring(0, start);
+				document.title=titl;
+				start++;
+				if (start==leng+1) {
+					start=0
+					if (repeat==0){
+						return;
+					}
+				}
+				setTimeout("titlemove()",140);
+			}
+			if (document.title){
+				titlemove();
+			}
+		</SCRIPT>
+	</head>
+	<body>
+		<p>Check out the page title in your browsers' chrome.</p>
+	</body>
+</html>
